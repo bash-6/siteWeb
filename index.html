@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="alternate" href="https://www.luiscode.cf/" hreflang="es-pe" />
+		<link rel="canonical" href="https://www.luiscode.cf/index.html/" />
+		<meta name="description" content=""/>
+		<meta name="author" content="luis angel" />
+		<meta name="copyright" content="Propietario del copyright" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Home</title>
+		<!-- cdn fontawesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/normalize.css">
+		<!-- <script src="./main.js"></script> -->
+	</head>
+	<body>
+		<header>
+			<div>
+				<h3><a href="/">luiscode</a></h3>
+				<button id="boton">
+					<i class="theme fa-solid fa-sun"></i>
+					<!-- <i class="theme fa-solid fa-moon"></i> -->
+				</button>
+				<!--
+				<input type="checkbox" id="cbox2" value="second_checkbox"> <label for="cbox2">Este es mi segundo checkbox</label>
+				-->
+			</div>
+	<script>
+		let boton = document.querySelector("#boton");
+		boton.addEventListener('click',()=>{
+			boton.classList.toggle('dark')
+			document.querySelector('body').classList.toggle('dark')
+			let i = document.querySelector('.theme')
+			if(!i.classList.contains('fa-moon')){
+				i.classList.remove('fa-sun')
+				i.classList.add('fa-moon')
+			}else{
+				i.classList.remove('fa-moon')
+				i.classList.add('fa-sun')
+			}
+		})
+	</script>
+			<nav>
+				<a href="#"><i class="fa-solid fa-house"></i>inicio</a>
+				<a href="#"><i class="fa-solid fa-user"></i>acerca</a>
+				<a href="#"><i class="fa-solid fa-book"></i>blog</a>
+				<a href="#"><i class="fa-solid fa-folder"></i>proyectos</a>
+			</nav>
+		</header>
+
+		<main>
+			<header>
+				<p>Programando ideas<br>
+				para ser mas productivos
+				</p>
+				<div>
+					<a href="">HTML</a>
+					<a href="">CSS3</a>
+					<a href="">JAVASCRIPT</a>
+				</div>
+			</header>
+
+			<article>
+				<h2>Herramientas Para Web</h2>	
+				<section>
+					<h3><i class="fa-brands fa-html5"></i> Estructura</h3>
+					<img src="https://kinsta.com/wp-content/uploads/2021/11/Untitled-54.png" alt=""/>
+					<p><strong>Html </strong>Es la estructura basica de la web, define la manera de ordenar el contenido sea texto, imagen, video, juegos, etc. los archivos tienen la extension <strong>'.html'</strong></p>
+					<button>saber mas</button>
+				</section>
+				<section>
+					<h3><i class="fa-brands fa-css3"></i> Estilo</h3>
+					<img src="https://codigoonclick.com/wp-content/uploads/2017/11/editores-codigo-javascript.jpg" alt=""/>	
+					<p><strong>Css </strong>podemos definir las fuentes, colores, el disenio de la pagina. los archivos tienen la extension <strong>'.css'</strong></p>
+					<button>saber mas</button>
+				</section>
+				<section>
+					<h3><i class="fa-brands fa-js-square"></i> Interaccion</h3>
+					<img src="https://codigoonclick.com/wp-content/uploads/2017/11/editores-codigo-javascript.jpg" alt=""/>	
+					<p><strong>Javascript </strong>Es un lenguaje de programacion, para poder darle mejor interaccion del lado del cliente.</p>
+					<button>saber mas</button>
+				</section>
+			</article>
+
+			<footer>
+				<h2 class="line-bottom">acerca de mi</h2>
+				<p>hola, soy luis, programador autodidacta; me dedico a digitalizar ideas hasta empresas ya establecidas, porque estoy convencido que ofrecer un servicio atravez de una pantalla promueve la inclusion y nos da la libertad de elegir, fortaleciendo una sociedad con mejores valores.</p>
+				<figure><img src="https://cdn.pixabay.com/photo/2016/11/29/13/24/coffee-1869820_960_720.jpg" alt=""/>
+					<figcaption>siempre en linea</figcaption>
+				</figure>
+				<button><a href="#">saber mas</a></button>
+			</footer>
+		</main>
+
+		<aside>
+			<header>
+				<h2 class="line-bottom">servicios</h2>
+				<img src="https://cdn.pixabay.com/photo/2020/08/09/14/25/business-5475661_960_720.jpg" alt=""/>
+				<p>Por medio de la web podemos transmitir: sitios web, juegos, comunicarnos, etc. Gracias a personas y empresas siguen creando herramientas que nos ayudan a poder contruir servicios que solucionen los diferentes problemas actuales.</p>
+			</header>
+			<article>
+				<h3><i class="fa-solid fa-display"></i>
+				Desarrollo de sitio web</h3>
+				<p>La presencia digital es importante, las personas buscan mejores alternativas.</p>
+				<button><a href="#">me interesa</a></button>
+			</article>
+			<article>
+				<h3><i class="fa-solid fa-cart-shopping"></i> Plataformas digitales</h3>
+				<p>Diferenciate de tu sector ofreciendo tus servicios de manera online.</p>
+				<button><a href="#">me interesa</a></button>
+			</article>
+			<article>
+				<h3><i class="fa-solid fa-mobile-screen"></i> Aplicaciones moviles</h3>
+				<p>ofrece a tus clientes un mejor servicio mediante aplicaciones a medida.</p>
+				<button><a href="#">me interesa</a></button>
+			</article>
+		</aside>
+
+		<footer>
+			<address>
+				<p>©SanDiego-Carabayllo<time datetime="2008-02-14 20:00">2022</time></p>
+			</address>
+		</footer>
+	<!-- <script src="./js/main.js"></script> -->
+	<!-- <script type="application/ld+json">
+	{
+		"@context": "https://schema.org/",
+		"@type": "WebSite",
+		"name": "luiscode",
+		"url": "https://www.luiscode.cf/",
+		"potentialAction": {
+			"@type": "SearchAction",
+			"target": "https://www.luiscode.cf/index.html{search_term_string}",
+			"query-input": "required name=search_term_string"
+		}
+	}
+	</script> -->
+	</body>
+</html>
