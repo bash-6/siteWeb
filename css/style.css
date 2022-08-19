@@ -44,7 +44,9 @@ body > header > div {
 	justify-content: space-between;;
 	align-items:center;
 }
+#contenedor-boton{
 
+}
 main > header {
 	background-image:url('https://cdn.pixabay.com/photo/2016/11/30/20/58/programming-1873854_960_720.png');
 	background-size:auto;
@@ -187,20 +189,21 @@ footer{
 	color: var(--primary);
 }
 
-#boton{
-	width:40px;
-	height:35px;
-	background:white;
-	border-radius:5px;
-
+label i{
+	font-size: 1.8rem;
 }
-#boton i{
-	font-size: 20px;
-}
-#boton.dark i{
-	color:white;
+label i:last-child{
+	display: none;
 }
 
-#boton.dark{
-	background:black;
+#moon{
+	display: none;
+}
+#moon:checked ~ label i:last-child {
+	display: inline-block;
+	--primary: #333;
+	--secundary: #fff;
+}
+#moon:checked ~ label i:first-child {
+	display: none;
 }

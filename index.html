@@ -19,29 +19,14 @@
 		<header>
 			<div>
 				<h3><a href="/">luiscode</a></h3>
-				<button id="boton">
-					<i class="theme fa-solid fa-sun"></i>
-					<!-- <i class="theme fa-solid fa-moon"></i> -->
-				</button>
-				<!--
-				<input type="checkbox" id="cbox2" value="second_checkbox"> <label for="cbox2">Este es mi segundo checkbox</label>
-				-->
+				<div id="contenedor-boton">
+					<input type="checkbox" id="moon" name="theme" value="moon">
+					<label for="moon">
+						<i class="theme fa-solid fa-sun"></i>
+						<i class="theme fa-solid fa-moon"></i>
+					</label>
+				</div>
 			</div>
-	<script>
-		let boton = document.querySelector("#boton");
-		boton.addEventListener('click',()=>{
-			boton.classList.toggle('dark')
-			document.querySelector('body').classList.toggle('dark')
-			let i = document.querySelector('.theme')
-			if(!i.classList.contains('fa-moon')){
-				i.classList.remove('fa-sun')
-				i.classList.add('fa-moon')
-			}else{
-				i.classList.remove('fa-moon')
-				i.classList.add('fa-sun')
-			}
-		})
-	</script>
 			<nav>
 				<a href="#"><i class="fa-solid fa-house"></i>inicio</a>
 				<a href="#"><i class="fa-solid fa-user"></i>acerca</a>
