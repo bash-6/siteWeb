@@ -1,8 +1,15 @@
 :root {
-	--primary: #fff;
-	--secundary: #222;
-	--tercary: green;
+	--primary:#f9f9f9;
+	--secundary:#fff;
+	--color:#111;
+	--action:orange;
+	--titulo:'Roboto Condensed', sans-serif;
+	--parrafo: 'Open Sans', sans-serif;
 }
+
+.fa-html5 { color: red; }
+.fa-css3 { color: blue; }
+.fa-js-square { color: yellow; }
 
 a {
 	text-decoration:none;
@@ -12,40 +19,50 @@ a {
 p {
 	line-height:1.7;
 	padding: 0 10px 0 10px;
+	font-family: var(--parrafo);
 }
-body.dark{
-	--primary: #333;
-	--secundary: #fff;
+h2,h3 {
+    font-family: var(--titulo);
 }
 body{
 	background:var(--primary);
-	color:var(--secundary);
+	color:var(--color);
+	transition: background .5s ease-out;
 }
+body.dark{
+	--primary: #000;
+	--secundary: #222;
+	--color: #fff;
+}
+
+h3 > a {
+    font-family: var(--titulo);
+	font-size: 1.8rem;
+}
+
 main button,
 aside button {
 	position:relative;
-	left:50%;
-	transform:translateX(-50%);
+	/* left:50%; */
+	/* transform:translateX(-50%); */
 	padding: 10px;
+	background:var(--action);
+	border-radius:7px;
+	border-color:var(--action);
+	color:var(--color);
 }
 img {
 	width:100%;
 }
-
-/*
- * position
- * display
- * width
- * text
- */
-
+body > header {
+	background-color:var(--secundary);
+}
 body > header > div {
 	display: flex;
 	justify-content: space-between;;
 	align-items:center;
-}
-#contenedor-boton{
-
+	max-width: 780px;
+	margin-left: auto;margin-right: auto;
 }
 main > header {
 	background-image:url('https://cdn.pixabay.com/photo/2016/11/30/20/58/programming-1873854_960_720.png');
@@ -61,11 +78,8 @@ header > nav {
 	margin-bottom:5px;
 	gap: 10px;
 	overflow-x: scroll;
-	/* overscroll-behavior-x: contain; */
 	scroll-snap-type: x proximity;
-	border-top: 2px solid;
-	border-bottom: 2px solid;
-	background:var(--secundary)
+	background:var(--primary)
 }
 
 nav > a {
@@ -74,11 +88,15 @@ nav > a {
 	width: 100%;
 	min-width: 100px;
 
-	border:1px solid;
+	border:1px solid var(--action);
 	border-radius:10px;
 	padding: 5px 10px;
 	text-align: center;
-	background:var(--primary)
+	background:var(--secundary)
+}
+
+a > i {
+	color: var(--action);
 }
 
 nav > a:nth-of-type(1){
@@ -94,23 +112,37 @@ a > i {
 	right:7px;
 }
 
+@media screen and (min-width: 1000px) {
+	nav > a:hover {
+		background:orange;
+	}	
+}
+
 main > header {
 	display:grid;
 	grid-template-rows:1fr 1fr;
 	min-height: 350px;
 
-	color: var(--primary)
 }
 
-header > p {
+main > header > p {
 	align-self:end;
 	justify-self:center;
+	color: var(--action);
+	font-size: 1.8rem;
 }
 main header > div {
 	align-self:center;
 	display:flex;
 	justify-content:space-around;
 }
+@media screen and (min-width: 1000px) {
+	main header > div {
+		justify-content:center;
+		gap: 20px;
+	}
+}
+
 div > a {
 	position: relative;
 	bottom:-10px;
@@ -118,30 +150,86 @@ div > a {
 	display:inline-block;
 	border-radius:10px;
 	padding: 10px;
-	background:red;
+	background: var(--action);
+	color: #fff;
 }
 
 
-h2 ~ section {
-
-	width:90%;
-}
 
 main > article {
 	display:grid;
-	gap:20px;
-	place-items:center;
+	place-items: center;
+	margin-bottom: 50px;	
 }
-
-h2 ~ section {
+main > article section {
+	display:grid;
+	width:90%;
 	position: relative;
 
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.30);
 	min-height:250px;
+	max-width: 350px;
 	border-radius:10px;
 	overflow: hidden;
+	background:var(--secundary);
+	padding-bottom: 20px;
+}
 
-	/* text-align: center; */
+main > article > div {
+	display:flex;
+	flex-direction:column;
+	
+	align-items:center;
+	gap:20px;
+
+}
+
+main p + button {
+	place-self:center;
+}
+
+@media screen and (min-width: 800px) {
+	main > article section {
+		display:grid;
+		grid-template-columns: 200px 1fr;
+		grid-template-areas:"titulo titulo"
+		"logo contenido"
+		"logo boton"
+	}
+	section h3 {
+		grid-area: titulo;	
+	}
+	section > i{
+		grid-area: logo;	
+	}
+	.fa-brands{font-size:8rem}
+	section p {
+		grid-area: contenido;	
+	}
+	section button{
+		grid-area: boton;	
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	main > article > div {
+		flex-direction:row;
+		justify-content:space-around;
+	}
+	main > article section {
+		min-height:450px;
+		grid-template-columns: 1fr;
+		grid-template-areas:"titulo"
+		"logo"
+		"contenido"
+		"boton"
+	}
+}
+
+article h3 + i {
+	font-size: 5rem;
+	width: 100%;
+	text-align: center;
 }
 img ~ button {
 	margin-bottom: 20px;
@@ -150,8 +238,8 @@ img ~ button {
 
 section > h3 {
 	margin-top: .1px;
-	background:red;
-	color: var(--primary);
+	background:var(--action);
+	color: var(--color);
 	padding: 10px;
 	text-align: center;
 }
@@ -164,33 +252,101 @@ section > h3 {
 	content:"";
 	display: block;
 	height: 3px;
-	background:red;
+	background:var(--action);
 	position: relative;
 	width:60%;
 	top:30px;
 }
 
+@media screen and (min-width: 800px) {
+	aside > div {
+		display: flex;
+		gap:10px;
+	}
+	aside > header {
+		display:grid;
+		min-height: 300px;
+		place-items: center;
+		grid-template-columns: 300px 1fr;
+		grid-template-areas:"titulo titulo"
+		"img contenido";
+	}
+	aside > header > h2 {
+		grid-area: titulo;	
+	}
+	aside > header > img {
+		grid-area: img;	
+	}
+	aside > header > p {
+		grid-area: contenido;	
+	}
+
+}
+
 aside article{
-	border-bottom:3px solid red;
-	border-left:3px solid red;
+	border-left:5px solid var(--action);
 	width:90%;
 	margin: 10px auto;
 	padding: 10px;
-	
+	color: var(--color);
+	background:var(--secundary)
 }
 
+@media screen and (min-width: 800px) {
+	aside > header {
+		max-width: 800px;
+		margin-left: auto; margin-right: auto;
+	}	
+}
 aside h3 {
 	text-align: center;
 }
 
-footer{
-	background:#222;
+h3 > i {
+	color: var(--action);
+	font-size: 1.5rem;
+}
+
+main > footer{
 	min-height: 100px;
-	color: var(--primary);
+	color: var(--color);
+	background:var(--secundary);
+	padding-bottom: 30px;
+}
+
+@media screen and (min-width: 800px) {
+	main > footer{
+		max-width: 800px;
+		margin-left: auto; margin-right: auto;
+		display:grid;
+		place-items: center;
+		grid-template-areas:"titulo titulo"
+		"contenido img"
+		"boton img";
+	}
+	footer > h2 {
+		grid-area: titulo;	
+	}
+	footer > p {
+		grid-area: contenido;	
+	}
+	footer > figure {
+		grid-area: img;	
+	}
+	footer > button {
+		grid-area: boton;	
+		justify-self:center;
+	}
+}
+body > footer {
+	display:flex;
+	align-content:center;
+	justify-content:center;
 }
 
 label i{
-	font-size: 1.8rem;
+	font-size: 2rem;
+	z-index:-1
 }
 label i:last-child{
 	display: none;
@@ -207,3 +363,13 @@ label i:last-child{
 #moon:checked ~ label i:first-child {
 	display: none;
 }
+
+/*
+@media screen and (min-width: 1000px) {
+	main > article > div {
+		display: flex;
+		justify-content:space-around;
+		gap:10px
+	}
+}
+*/
